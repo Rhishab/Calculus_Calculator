@@ -1,4 +1,3 @@
-
 #include<iostream>
 
 #include<string>
@@ -8,12 +7,13 @@ using namespace std;
 class Stack {
 private:
     int top;
-    int arr[5];
+    
+    int arr[6];
 
 public:
     Stack() {
         top = -1;
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 6; i++) {
             arr[i] = 0;
         }
     }
@@ -25,7 +25,7 @@ public:
             return false;
     }
     bool isFull() {
-        if (top == 4)
+        if (top == 5)
             return true;
         else
             return false;
@@ -54,11 +54,11 @@ public:
         }
     }
 
-    
+
 
     void display() {
         cout << "All values in the Stack are " << endl;
-        for (int i = 4; i >= 0; i--) {
+        for (int i = 5; i >= 0; i--) {
             cout << arr[i] << endl;
         }
     }
@@ -67,14 +67,33 @@ public:
 int main() {
     Stack s1;
     int option, postion, value;
+    int power, cons;
+    cout << " Enter the cons";
+    cin >> cons;
+    cout << "Enter the power ";
+    cin >> power;
+    
+    s1.push(cons);
+    s1.push(power);
+    s1.display();
+    int temp = s1.pop(); // power
+    int temp2 = s1.pop(); //cons
+    int Npower = temp - 1;
+    int Ncons = temp2 * temp;
+    s1.push(Ncons);
+    s1.push(Npower);
+    s1.display();
+    cout << Ncons << " X^" << Npower;
 
-    do {
-        cout << "What operation do you want to perform? Select Option number. Enter 0 to exit." << endl;
-        cout << "1. Push()" << endl;
-        cout << "2. Pop()" << endl;
-        cout << "3. isEmpty()" << endl;
-        cout << "4. isFull()" << endl;
-        cout << "5. display()" << endl;
+         
+
+
+       //cout << "What operation do you want to perform? Select Option number. Enter 0 to exit." << endl;
+        //cout << "1. Push()" << endl;
+        //cout << "2. Pop()" << endl;
+        //cout << "3. isEmpty()" << endl;
+        //cout << "4. isFull()" << endl;
+        //cout << "5. display()" << endl; 
 
 
         cin >> option;
@@ -106,9 +125,6 @@ int main() {
             s1.display();
             break;
 
-        }
-
-
-    } while (option != 0);
+        };    
     return 0;
 }

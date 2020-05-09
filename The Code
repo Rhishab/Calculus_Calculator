@@ -7,7 +7,7 @@ using namespace std;
 class Stack {
 private:
     int top;
-    
+
     int arr[6];
 
 public:
@@ -66,65 +66,120 @@ public:
 
 int main() {
     Stack s1;
+
     int option, postion, value;
-    int power, cons;
-    cout << " Enter the cons";
-    cin >> cons;
-    cout << "Enter the power ";
-    cin >> power;
-    
-    s1.push(cons);
-    s1.push(power);
-    s1.display();
-    int temp = s1.pop(); // power
-    int temp2 = s1.pop(); //cons
-    int Npower = temp - 1;
-    int Ncons = temp2 * temp;
-    s1.push(Ncons);
-    s1.push(Npower);
-    s1.display();
-    cout << Ncons << " X^" << Npower;
-
-         
+    int power, cons, size, x;
+    cout << "Enter how any variables are there";
+    cin >> size;
+    int m1, m2;
 
 
-       //cout << "What operation do you want to perform? Select Option number. Enter 0 to exit." << endl;
-        //cout << "1. Push()" << endl;
-        //cout << "2. Pop()" << endl;
-        //cout << "3. isEmpty()" << endl;
-        //cout << "4. isFull()" << endl;
-        //cout << "5. display()" << endl; 
 
 
-        cin >> option;
-        switch (option) {
-        case 0:
+    for (x = 0;x <= size;x++) {
+        if (x >= size) {
+            cout << "Stack Overflow ";
             break;
-        case 1:
-            cout << "Enter an item to push in the stack" << endl;
-            cin >> value;
-            s1.push(value);
-            break;
-        case 2:
-            cout << "Pop Function Called - Poped Value: " << s1.pop() << endl;
-            break;
-        case 3:
-            if (s1.isEmpty())
-                cout << "Stack is Empty" << endl;
-            else
-                cout << "Stack is not Empty" << endl;
-            break;
-        case 4:
-            if (s1.isFull())
-                cout << "Stack is Full" << endl;
-            else
-                cout << "Stack is not Full" << endl;
-            break;
-        case 5:
-            cout << "Display Function Called - " << endl;
-            s1.display();
-            break;
+        }
+        else {
+            int matrix[2][3];
 
-        };    
+            for ( m1 = 0; m1 < 3; m1++)
+            {
+                for ( m2 = 0; m2 < 2; m2++)
+                {
+                    cout << "Enter Integer :";
+                    cin >> matrix[m1][m2];
+                }
+            }
+            cout << endl;
+
+            for (int m1 = 0; m1 < 3; m1++)
+            {
+                for (int m2 = 0; m2 < 2; m2++)
+                {
+                    cout << matrix[m1][m2];
+                    cout << ",";
+                }
+                cout << endl;
+
+           /* int z;
+            cout << "How many variables aree there";
+            int variables;
+            cin >> variables;
+            for (z = 0;z <= variables;z++) {
+
+                cout << " Enter the cons";
+                cin >> cons;
+                cout << "Enter the power ";
+                cin >> power;
+                int array[20];
+                array[z] = { cons, power };*/
+
+
+
+
+                /*s1.push(cons);
+                s1.push(power);
+                s1.display();
+                int temp = s1.pop(); // power
+                int temp2 = s1.pop(); //cons
+                int Npower = temp - 1;
+                int Ncons = temp2 * temp;
+                s1.push(Ncons);
+                s1.push(Npower);
+                s1.display();
+                cout << Ncons << " X^" << Npower << endl;
+                */
+
+            }
+
+        }
+
+    }
+
+
+
+
+
+    //cout << "What operation do you want to perform? Select Option number. Enter 0 to exit." << endl;
+     //cout << "1. Push()" << endl;
+     //cout << "2. Pop()" << endl;
+     //cout << "3. isEmpty()" << endl;
+     //cout << "4. isFull()" << endl;
+     //cout << "5. display()" << endl; 
+
+
+  /*   cin >> option;
+     switch (option) {
+     case 0:
+         break;
+     case 1:
+         cout << "Enter an item to push in the stack" << endl;
+         cin >> value;
+         s1.push(value);
+         break;
+     case 2:
+         cout << "Pop Function Called - Poped Value: " << s1.pop() << endl;
+         break;
+     case 3:
+         if (s1.isEmpty())
+             cout << "Stack is Empty" << endl;
+         else
+             cout << "Stack is not Empty" << endl;
+         break;
+     case 4:
+         if (s1.isFull())
+             cout << "Stack is Full" << endl;
+         else
+             cout << "Stack is not Full" << endl;
+         break;
+     case 5:
+         cout << "Display Function Called - " << endl;
+         s1.display();
+         break;
+
+     };     */
     return 0;
 }
+

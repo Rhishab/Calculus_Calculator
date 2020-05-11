@@ -4,16 +4,17 @@
 
 using namespace std;
 
+
 class Stack {
 private:
     int top;
+    
 
     int arr[6];
-
 public:
     Stack() {
         top = -1;
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 18; i++) {
             arr[i] = 0;
         }
     }
@@ -58,9 +59,9 @@ public:
 
     void display() {
         cout << "All values in the Stack are " << endl;
-        for (int i = 5; i >= 0; i--) {
+       /* for (int i = 18; i >= 0; i--) {
             cout << arr[i] << endl;
-        }
+        } */
     }
 };
 
@@ -72,17 +73,18 @@ int main() {
     cout << "Enter how any variables are there";
     cin >> size;
     int m1, m2;
+    int matrix[2][3];
 
 
 
 
-    for (x = 0;x <= size;x++) {
-        if (x >= size) {
+    for (x = 0;x <= size*2;x++) {
+        if (x >= size*2) {
             cout << "Stack Overflow ";
             break;
         }
         else {
-            int matrix[2][3];
+            
 
             for ( m1 = 0; m1 < 3; m1++)
             {
@@ -102,6 +104,7 @@ int main() {
                     cout << ",";
                 }
                 cout << endl;
+            }
 
            /* int z;
             cout << "How many variables aree there";
@@ -117,22 +120,35 @@ int main() {
                 array[z] = { cons, power };*/
 
 
-
-
-                /*s1.push(cons);
-                s1.push(power);
-                s1.display();
-                int temp = s1.pop(); // power
-                int temp2 = s1.pop(); //cons
-                int Npower = temp - 1;
-                int Ncons = temp2 * temp;
-                s1.push(Ncons);
-                s1.push(Npower);
-                s1.display();
-                cout << Ncons << " X^" << Npower << endl;
-                */
-
+            for (int m1 = 0 ; m1 < 3; m1=m1++)
+            {
+                for (int m2 = 0; m2 < 2; m2++)
+                {
+                    s1.push(matrix[m1][m2]);
+                }
+                    
+                    
+                    //s1.display();
+                    //Differentiation happens here
+                    int temp = s1.pop(); // power
+                    int temp2 = s1.pop(); //cons
+                    int Npower = temp - 1;
+                    int Ncons = temp2 * temp;
+                    s1.push(matrix[m1][m2]);
+                    s1.push(matrix[m1][m2]);
+                    s1.display(); 
+                    cout << Ncons << " X^" << Npower << endl; 
+                   
+                
+                cout << endl;
             }
+            
+
+               
+                
+                
+
+            
 
         }
 
